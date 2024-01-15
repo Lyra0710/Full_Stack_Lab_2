@@ -5,10 +5,8 @@ const session = require('express-session');
 require('./passport')
 
 app.use(session({ 
-    // name: 'google-auth-session', 
-    // keys: ['key1', 'key2'] 
-    secret: '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', // Set a secret to sign the session ID cookie
-    resave: false, // Set to false to avoid session being saved on every request
+    secret: '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', 
+    resave: false,
     saveUninitialized: false 
 })); 
 app.use(passport.initialize()); 
@@ -34,6 +32,11 @@ app.get('/', (req, res) => {
                 margin: 0;
             }
 
+            h1 {
+                color: black;
+                margin-bottom: 20px;
+            }
+
             button {
                 background-color: #4285f4;
                 color: #ffffff;
@@ -49,8 +52,12 @@ app.get('/', (req, res) => {
             }
         </style>
     </head>
+    
     <body>
+        <div>
+        <h1>Google Sign-In Authentication</h1>
         <button><a href='/auth' style="text-decoration:none; color:inherit;">Login With Google</a></button>
+    </div>
     </body>
     </html>
 `); 
