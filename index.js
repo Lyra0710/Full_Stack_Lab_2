@@ -1,12 +1,15 @@
 const express = require('express'); 
 const app = express(); 
 const passport = require('passport');
-const cookieSession = require('cookie-session');
+const session = require('express-session');
 require('./passport')
 
-app.use(cookieSession({ 
-    name: 'google-auth-session', 
-    keys: ['key1', 'key2'] 
+app.use(session({ 
+    // name: 'google-auth-session', 
+    // keys: ['key1', 'key2'] 
+    secret: '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', // Set a secret to sign the session ID cookie
+    resave: false, // Set to false to avoid session being saved on every request
+    saveUninitialized: false 
 })); 
 app.use(passport.initialize()); 
 app.use(passport.session()); 
