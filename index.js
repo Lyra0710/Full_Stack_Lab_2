@@ -11,10 +11,6 @@ app.use(cookieSession({
 app.use(passport.initialize()); 
 app.use(passport.session()); 
 
-app.get('/' , (req , res) => { 
-    res.send("<h1>Google Authentication</h1>"); 
-});
-
 app.get('/', (req, res) => { 
     res.send("<button><a href='/auth'>Login With Google</a></button>") 
 }); 
@@ -41,12 +37,7 @@ app.get('/auth/callback/success' , (req , res) => {
 app.get('/auth/callback/failure' , (req , res) => { 
     res.send("Error"); 
 }) 
-  
-app.listen(4000 , () => { 
-    console.log("Server Running on port 4000"); 
-});
- 
-  
+    
 app.listen(3000 , () => { 
     console.log("Server running on port 3000"); 
 });
