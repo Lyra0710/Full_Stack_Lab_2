@@ -11,7 +11,7 @@ passport.deserializeUser(function(user, done) {
 passport.use(new GoogleStrategy({ 
     clientID:"YOUR ID", // Your Credentials here. 
     clientSecret:"YOUR SECRET", // Your Credentials here. 
-    callbackURL:"http://localhost:4000/auth/callback", 
+    callbackURL:"http://localhost:3000/auth/callback", 
     passReqToCallback:true
   }, 
   function(request, accessToken, refreshToken, profile, done) { 
